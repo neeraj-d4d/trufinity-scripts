@@ -1380,6 +1380,7 @@
 
     // Assessment Required case
     if (system.assessment) {
+      document.body.classList.add("tf-assessment");
       setText("tf-cat", "SITE ASSESSMENT REQUIRED");
       setText("tf-cat-title", "Assessment Required");
       setText("tf-specs", "This configuration requires an in-home assessment.");
