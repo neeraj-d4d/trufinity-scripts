@@ -1,6 +1,5 @@
 //=================================================================
 //      BLOCK 2: ESTIMATE PAGE LOGIC — REAL PRICING
-//      Uses client pricebook lookup table (not modifier formula)
 //=================================================================
 
 (function () {
