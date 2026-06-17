@@ -1412,6 +1412,7 @@
       return;
     }
 
+    document.body.classList.add("tf-normal");
     setText("tf-cat", system.category.toUpperCase());
     setText("tf-cat-title", system.category);
     setText("tf-specs", system.specs);
