@@ -1451,8 +1451,7 @@
         "tf-price-1",
         Math.round(tfMonthly(price, 1, 0)).toLocaleString(),
       );
-      var savingsDollar = Math.round(8000 + (pos - 20) * 233);
-      setText("tf-savings-dollar", savingsDollar.toLocaleString());
+      setText("tf-savings-dollar", Math.round(price).toLocaleString());
       setText("tf-savings-pct", String(pos));
       var pct = ((pos - 20) / 30) * 100;
       if (bubble) bubble.style.left = pct + "%";
