@@ -1388,6 +1388,21 @@
       setText("tf-price-15", "—");
       setText("tf-price-10", "—");
       setText("tf-price-1", "—");
+
+      // Hide slider and savings sections — not relevant for assessment
+      var sliderWrap = document.querySelector(".tf-slider-wrap");
+      var sliderLabels = document.querySelector(".tf-slider-labels");
+      var effTitle = document.querySelector(".tf-eff-title");
+      var effSub = document.querySelector(".tf-eff-sub");
+      if (sliderWrap) sliderWrap.style.display = "none";
+      if (sliderLabels) sliderLabels.style.display = "none";
+      if (effTitle) effTitle.style.display = "none";
+      if (effSub) effSub.style.display = "none";
+
+      // Hide price grid — prices are null
+      var estGrid = document.querySelector(".tf-est-grid");
+      if (estGrid) estGrid.style.display = "none";
+
       var greetElA = document.getElementById("tf-greeting");
       if (greetElA && lead.firstName) {
         greetElA.textContent =
@@ -1424,6 +1439,7 @@
     if (!slider) return;
 
     function updateSlider() {
+      if (!system.rangeLow || !system.rangeHigh) return; // safety check
       var pos = parseInt(slider.value, 10);
       var t = (pos - 20) / 30;
       var price = system.rangeLow + (system.rangeHigh - system.rangeLow) * t;
